@@ -199,3 +199,26 @@ console.log(foo === bar);
 bar.val = 20;
 console.log(foo.val, bar.val);
 console.log(foo === bar);
+
+
+var a = 1;
+var b = a;
+
+console.log(a,b); // 1,1
+console.log(a === b); // true
+
+a = 10;
+console.log(a,b); // 10 , 1
+
+
+var foo = {
+    val : 10
+}
+
+var bar = foo;
+console.log(foo.val, bar.val);
+
+bar.val = 20;
+console.log(foo.val, bar.val);
+// 변수 bar에 변수 foo의 값을 할당하였다. 변수 foo의 값은 생성된 객체를 가리키는 참고값. 
+// 변수 bar에도 같은 참조값이 저장
