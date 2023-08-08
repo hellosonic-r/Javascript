@@ -1,9 +1,6 @@
 function solution(x, n) {
-    var answer = [];
-    var temp = x;
-    while (answer.length < n){
-        answer.push(temp);
-        temp += x;
-    }
+    var answer = Array(n).fill(x).map((element, idx) => {
+        return element*(idx + 1);
+    });
     return answer;
 }
