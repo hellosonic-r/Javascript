@@ -1,7 +1,9 @@
 function solution(absolutes, signs) {
     var answer = 0;
-    for (var i = 0; i < signs.length; i++){
-        if (signs[i] == true){
+    var len = absolutes.length;
+
+    for (let i = 0; i < len; i++){
+        if (signs[i] == true) {
             answer += absolutes[i];
         } else {
             answer -= absolutes[i];
