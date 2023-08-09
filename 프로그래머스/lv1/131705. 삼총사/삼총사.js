@@ -1,28 +1,24 @@
-var result = []
+var cnt = 0;
 
-function dfs(depth, number, start, temp){
-    if (depth == 3){
-        if (temp == 0){
-            console.log(temp);
-            result.push(temp)
-        }
+function dfs(depth, start, array, temp){
+    if (temp.length == 3){
+        var sum = temp.reduce(function (s, currValue){
+            return s + currValue;
+        });
+        if (sum == 0) cnt += 1;
         return;
-        }
-    
-    for (var i = start; i < number.length; i++){
-        var temp = temp + number[i]
-        dfs(depth+1, number, i+1, temp)
-        temp = temp - number[i]
+    }
+    for (var i = start; i < array.length; i++){
+        temp.push(array[i]);
+        dfs(depth+1, i+1, array, temp);
+        temp.pop();
     }
 }
 
 function solution(number) {
     var answer = 0;
-    dfs(0,number,0,0);
-    if (result.length == 0){
-        answer = 0
-    } else {
-        answer = result.length;
-    }
+    dfs(0, 0, number, []);
+    answer = cnt;
     return answer;
+    
 }
