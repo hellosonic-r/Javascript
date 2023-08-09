@@ -1,17 +1,12 @@
 function solution(left, right) {
     var answer = 0;
-    for (var i = left; i < right+1; i++){
+    for (let num = left; num < right+1; num++){
         var cnt = 0;
-        for (var j = 1; j < i+1; j++){
-            if (i % j == 0){
-                cnt += 1
-            }
+        for (let i = 1; i < num+1; i++){
+            if (num % i == 0) cnt += 1;
         }
-        if (cnt % 2 == 0){
-            answer += i;
-        } else {
-            answer -= i;
-        }
+        if (cnt % 2 == 0) answer += num;
+        else answer -= num;
     }
     return answer;
 }
