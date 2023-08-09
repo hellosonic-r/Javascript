@@ -1,17 +1,14 @@
 function solution(sizes) {
     var answer = 0;
-    var maxX = 0;
-    var maxY = 0;
-    for (var y = 0; y < sizes.length; y++){
-        sizes[y].sort(function(a,b){
-            return a-b;
-        });
-        if (sizes[y][0] > maxX){
-            maxX = sizes[y][0];
-        }
-        if (sizes[y][1] > maxY){
-            maxY = sizes[y][1];
-        }
+    var arr = [];
+    var x = 0;
+    var y = 0;
+    for (let a of sizes){
+        a.sort((a,b) => a-b);
+        if (a[0] > x) x = a[0];
+        if (a[1] > y) y = a[1];
     }
-    return maxX*maxY;
+    
+    answer = x*y;
+    return answer;
 }
