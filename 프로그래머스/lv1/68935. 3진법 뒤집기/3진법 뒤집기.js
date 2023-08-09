@@ -1,14 +1,10 @@
 function solution(n) {
     var answer = 0;
-    var stack = [];
-    while ( n != 0){
-        stack.push(n % 3);
-        n = parseInt(n / 3);
+    var arr = n.toString(3).split("").map(Number);
+    
+    for (let i = 0; i < arr.length; i++){
+        answer += arr[i] * Math.pow(3, i);
     }
-    console.log(stack);
-    stack.reverse();
-    for (var i = 0; i < stack.length; i++){
-        answer += stack[i] * (3 ** i);
-    }
+    
     return answer;
 }
