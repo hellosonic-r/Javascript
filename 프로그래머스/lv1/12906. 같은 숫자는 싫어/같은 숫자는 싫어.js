@@ -1,12 +1,12 @@
 function solution(arr)
 {
     var answer = [];
-
-    for (var i of arr){
-        if (answer[answer.length-1] == i) {
-            continue
+    
+    for (let num of arr){
+        if (answer.length == 0){
+            answer.push(num);
         } else {
-            answer.push(i);
+            if (num != answer[answer.length-1]) answer.push(num);
         }
     }
     
