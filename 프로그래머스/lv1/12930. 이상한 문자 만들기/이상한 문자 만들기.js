@@ -1,18 +1,18 @@
 function solution(s) {
-    var answer = '';
-    var cnt = 0;
-    for (var i = 0; i < s.length; i++){
-        if (s[i] == " "){
-            answer += s[i];
-            cnt = 0;
-        } else {
-            if (cnt % 2 == 0){
-                answer += s[i].toUpperCase();
+    var answer =[];
+    var words = s.split(" ");
+
+    for (let word of words){
+        var temp = ''
+        for (let i = 0; i < word.length; i++){
+            if (i % 2 == 0){
+                temp += word[i].toUpperCase();
             } else {
-                answer += s[i].toLowerCase();
+                temp += word[i].toLowerCase();
             }
-            cnt += 1;
         }
+        answer.push(temp);
     }
-    return answer;
+    
+    return answer.join(" ");
 }
