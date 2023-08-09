@@ -1,22 +1,12 @@
+function getGcd(a,b){
+    if (b == 0) return a;
+    return getGcd(b, a%b);
+}
 function solution(n, m) {
     var answer = [];
-    var arr = [n,m];
-    var min = Math.min(...arr);
-    var gcd = 0; 
-    for (var i = min ; i > 0; i--){
-        if (n % i == 0 && m % i == 0){
-            gcd = i;
-            break
-        } 
-    }
-    console.log(gcd);
-    
-    var lcm = (n / gcd) * (m / gcd) * gcd;
-    
+    var gcd = getGcd(n,m);
     answer.push(gcd);
+    var lcm = n*m / gcd;
     answer.push(lcm);
-    
     return answer;
 }
-
-  //4 , 10 2 2 ,  2 2 5  2 
