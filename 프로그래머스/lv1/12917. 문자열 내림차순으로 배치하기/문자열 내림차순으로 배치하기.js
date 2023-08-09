@@ -1,8 +1,5 @@
 function solution(s) {
     var answer = '';
-    var arr = s.split("");
-    arr.sort();
-    arr.reverse();
-    answer = arr.join("");
+    answer = s.split("").sort().reverse().join("");
     return answer;
 }
