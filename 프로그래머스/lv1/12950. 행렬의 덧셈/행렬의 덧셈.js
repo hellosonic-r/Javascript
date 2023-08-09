@@ -1,10 +1,12 @@
 function solution(arr1, arr2) {
     var answer = [];
-
-    for (var y = 0; y < arr1.length; y++){
+    var y = arr1.length;
+    var x = arr1[0].length;
+    
+    for (var i = 0; i < y; i++){
         var temp = [];
-        for (var x = 0; x < arr1[0].length; x++){
-            temp.push(arr1[y][x]+arr2[y][x]);
+        for (var j = 0; j < x; j++){
+            temp.push(arr1[i][j] + arr2[i][j]); 
         }
         answer.push(temp);
     }
