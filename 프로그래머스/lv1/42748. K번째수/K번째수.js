@@ -1,10 +1,11 @@
 function solution(array, commands) {
     var answer = [];
-    for (var c of commands){
-        var tempArr = array.slice(c[0]-1,c[1]).sort(function(a,b){
-            return a-b;
-        })
-        answer.push(tempArr[c[2]-1]);
+    for (let c of commands){
+        var newArr = array.slice(c[0]-1, c[1]);
+        newArr.sort((a,b) => (a-b));
+        console.log(newArr);
+        answer.push(newArr[c[2]-1]);
+        
     }
     return answer;
 }
