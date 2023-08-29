@@ -6,4 +6,5 @@ function solution(num) {
         answer = 'Odd';
     }
     return answer;
+    
 }
