@@ -4,6 +4,5 @@ function solution(n)
     var answer = arr.reduce(function(sum, currValue){
        return sum + currValue; 
     });
-
     return answer;
 }
