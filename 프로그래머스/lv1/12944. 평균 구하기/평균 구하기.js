@@ -4,4 +4,5 @@ function solution(arr) {
     }, 0);
     var answer = sum / arr.length;
     return answer;
+    
 }
