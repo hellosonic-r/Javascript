@@ -5,4 +5,5 @@ function solution(n)
        return sum + currValue; 
     });
     return answer;
+    
 }
