@@ -16,6 +16,7 @@ function solution(s){
     
     if (pCnt == yCnt) answer = true;
     else answer = false;
-
+    
     return answer;
+    
 }
