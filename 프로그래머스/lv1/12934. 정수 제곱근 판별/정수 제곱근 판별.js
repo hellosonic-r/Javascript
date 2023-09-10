@@ -5,5 +5,4 @@ function solution(n) {
     if (number == parseInt(number)) answer = Math.pow(number+1,2);
     else answer = -1;
     return answer;
-    
 }
