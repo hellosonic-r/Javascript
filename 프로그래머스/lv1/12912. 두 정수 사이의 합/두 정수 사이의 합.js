@@ -6,5 +6,4 @@ function solution(a, b) {
         answer += i;
     }
     return answer;
-    
 }
