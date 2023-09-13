@@ -10,4 +10,5 @@ function solution(arr, divisor) {
         answer.sort((a,b) => (a-b));
     }
     return answer;
+    
 }
