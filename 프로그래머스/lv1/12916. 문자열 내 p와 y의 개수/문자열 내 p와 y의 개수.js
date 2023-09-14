@@ -18,5 +18,4 @@ function solution(s){
     else answer = false;
     
     return answer;
-    
 }
