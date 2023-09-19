@@ -5,4 +5,5 @@ function solution(s) {
     answer += " ";
     answer += Math.max(...array);
     return answer;
+    
 }
