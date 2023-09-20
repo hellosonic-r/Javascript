@@ -1,7 +1,8 @@
 function solution(arr) {
-    var sum = arr.reduce(function(tmp, currValue){
-        return tmp + currValue;
-    }, 0);
-    var answer = sum / arr.length;
+    var answer = 0;
+    const sum = arr.reduce(function(s, currValue){
+        return s + currValue;
+    });
+    answer = sum / arr.length;
     return answer;
 }
