@@ -1,11 +1,14 @@
 function solution(n) {
-    var answer = 0;
-    for (let i = 1; i < n+1; i++){
-        if (n%i == 1){
-            answer = i;
-            break;
-        }
-    }
-    return answer;
     
+    const arr = Array(n).fill().map((element, idx) => {
+        return idx+1;
+    });
+    let flag = true;
+    let result = arr.filter((element) => {
+       if ((n % element == 1) && (flag == true)){
+           flag = false;
+           return element;
+       }  
+    });
+    return result[0];
 }
