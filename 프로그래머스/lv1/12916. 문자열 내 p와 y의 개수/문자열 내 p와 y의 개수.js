@@ -1,21 +1,15 @@
-function count(array, n){
-    var cnt = 0;
-    for (let a of array){
-        if (a == n) cnt += 1;
+function count(array, value){
+    let cnt = 0;
+    for (let element of array){
+        if (element == value) cnt += 1;
     }
-    return cnt;
+    return cnt; 
 }
-
 function solution(s){
     var answer = true;
-
-    var news = s.toUpperCase();
     
-    var pCnt = count(news, 'P');
-    var yCnt = count(news, 'Y');
+    const pCnt = count(s.toLowerCase(),'p');
+    const yCnt = count(s.toLowerCase(),'y');
     
-    if (pCnt == yCnt) answer = true;
-    else answer = false;
-    
-    return answer;
+    return pCnt == yCnt;
 }
