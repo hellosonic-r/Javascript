@@ -1,8 +1,7 @@
 function solution(n) {
-    var answer = 0;
-    var number = Math.sqrt(n);
-    
-    if (number == parseInt(number)) answer = Math.pow(number+1,2);
-    else answer = -1;
-    return answer;
+    const sqrtNum = Math.sqrt(n);
+    if (sqrtNum == parseInt(sqrtNum)) {
+        return Math.pow(sqrtNum+1,2);
+    }
+    return -1
 }
