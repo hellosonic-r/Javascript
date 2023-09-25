@@ -1,9 +1,7 @@
 function solution(s) {
-    var answer = '';
-    var array = s.split(" ").map(Number);
-    answer += Math.min(...array);
-    answer += " ";
-    answer += Math.max(...array);
-    return answer;
-    
+    const result = [];
+    const arr = s.split(" ").map(Number);
+    result.push(Math.min(...arr));
+    result.push(Math.max(...arr));
+    return result.join(" ");
 }
