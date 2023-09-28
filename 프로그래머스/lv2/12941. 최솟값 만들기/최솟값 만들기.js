@@ -1,19 +1,14 @@
 function solution(A,B){
-    var answer = 0;
-
-    A.sort(function(a,b){
-        return a-b;
-    });
     
-    B.sort(function(a,b){
-        return b-a;
-    });
+    A.sort((a,b) => a-b);
+    B.sort((a,b) => b-a);
     
-    var len = A.length;
+    const n = A.length;
+    let answer = 0;
     
-    for (var i = 0; i < len; i++){
-        answer += (A[i] * B[i])
+    for (let i = 0; i < n; i++){
+        answer += (A[i] * B[i]);
     }
-
-    return answer;
+    
+    return answer;    
 }
