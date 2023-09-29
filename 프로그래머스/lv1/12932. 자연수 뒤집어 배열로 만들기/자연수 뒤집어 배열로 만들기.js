@@ -1,4 +1,3 @@
 function solution(n) {
-    const array = String(n).split("").map(Number).reverse();
-    return array;
+    return [...n.toString()].map(Number).reverse();
 }
