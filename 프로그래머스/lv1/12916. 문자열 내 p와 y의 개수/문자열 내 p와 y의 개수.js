@@ -1,15 +1,11 @@
-function count(array, value){
-    let cnt = 0;
-    for (let element of array){
-        if (element == value) cnt += 1;
-    }
-    return cnt; 
-}
 function solution(s){
-    var answer = true;
+    let pCnt = 0, yCnt = 0;
+    const string = s.toLowerCase();
     
-    const pCnt = count(s.toLowerCase(),'p');
-    const yCnt = count(s.toLowerCase(),'y');
+    [...string].forEach((element, value) => {
+        if (element == "p") pCnt += 1;
+        else if (element == "y") yCnt += 1;
+    });
     
     return pCnt == yCnt;
 }
