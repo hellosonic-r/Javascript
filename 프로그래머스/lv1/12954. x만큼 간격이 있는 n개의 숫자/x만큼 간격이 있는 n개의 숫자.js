@@ -1,11 +1,6 @@
 function solution(x, n) {
-    // var answer = Array(n).fill(x).map((element, idx) => {
-    //     return element*(idx + 1);
-    // });
-    // return answer;
+    return Array.from( { length : n}, () => x).map((element, idx) => {return element * (idx+1)})
+    // return arr.map((element, idx) => {return element * (idx+1)});
     
-    var answer = Array(n).fill(x).map((element, idx) => {
-        return element*(idx+1);
-    });
-    return answer;
+    // return Array(n).fill(x).map((element, idx) => {return element * (idx + 1)});
 }
