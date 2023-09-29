@@ -1,14 +1,7 @@
 function solution(n) {
-    
-    const arr = Array(n).fill().map((element, idx) => {
-        return idx+1;
+    const arr = Array.from({ length : n }, (_,idx) => idx+1);
+    const newArr = arr.filter((element, idx) => {
+        if (n%element == 1) return element;
     });
-    let flag = true;
-    let result = arr.filter((element) => {
-       if ((n % element == 1) && (flag == true)){
-           flag = false;
-           return element;
-       }  
-    });
-    return result[0];
+    return newArr[0];
 }
