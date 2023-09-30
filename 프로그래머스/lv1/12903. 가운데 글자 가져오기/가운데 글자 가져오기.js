@@ -1,10 +1,4 @@
 function solution(s) {
-    var answer = '';
-    if (s.length % 2 == 1){
-        answer = s[parseInt(s.length / 2)];
-    }
-    else {
-        answer = s.split("").slice(parseInt(s.length/2)-1, parseInt(s.length/2)+1).join("");
-    }
-    return answer;
+    const mid = Math.floor(s.length/2);
+    return s.length % 2 == 0 ? s.slice(mid-1, mid+1) : s[mid];
 }
