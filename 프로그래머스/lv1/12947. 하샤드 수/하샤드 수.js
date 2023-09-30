@@ -1,4 +1,3 @@
 function solution(x) {
-    const sum = String(x).split("").map(Number).reduce((tempSum, currValue) => {return tempSum + currValue});
-    return x % sum == 0;
+    return x % ([...String(x)].map(Number).reduce((s,currValue) => {return s + currValue;}, 0)) == 0;
 }
