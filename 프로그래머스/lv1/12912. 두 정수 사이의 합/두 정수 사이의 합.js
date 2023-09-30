@@ -1,8 +1,8 @@
 function solution(a, b) {
-    var answer = 0;
-    var arr = [a,b];
-    arr.sort((a,b) => (a-b));
-    for (let i = arr[0]; i < arr[1]+1; i++){
+    let answer = 0;
+    const start = Math.min(a,b);
+    const end = Math.max(a,b);
+    for(let i = start; i < end+1; i++) {
         answer += i;
     }
     return answer;
