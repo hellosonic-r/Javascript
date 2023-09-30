@@ -1,13 +1,10 @@
 function solution(numbers) {
-    var answer = 45;
-    var arr = Array(10).fill().map((element, idx) => {
-        return idx;
+    // const arr = Array(10).fill().map((_,idx) => {return idx+1});
+    const arr = Array.from( {length : 10}, (element, idx) => {return idx;});
+    let answer = 0;
+    arr.forEach((element,idx) => {
+        numbers.includes(element) ? answer += 0 : answer += element; 
     });
-    var tmp = 0;
     
-    for (let element of numbers){
-        if (arr.includes(element) == true) tmp += element;
-    }
-    answer -= tmp;
     return answer;
 }
