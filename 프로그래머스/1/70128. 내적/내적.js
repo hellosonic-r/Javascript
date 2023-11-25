@@ -4,6 +4,5 @@ function solution(a, b) {
     for (var i = 0; i < len; i++){
         answer += (a[i]*b[i]);
     }
-    
     return answer;
 }
