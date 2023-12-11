@@ -7,7 +7,5 @@ function solution(array, commands) {
         answer.push(newArr[c[2]-1]);
         
     }
-    
-    
     return answer;
 }
