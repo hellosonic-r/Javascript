@@ -6,7 +6,5 @@ function solution(numbers) {
         numbers.includes(element) ? answer += 0 : answer += element; 
     });
     
-    
-    
     return answer;
 }
