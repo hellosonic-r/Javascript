@@ -9,5 +9,6 @@ function solution(left, right) {
         else answer -= num;
     }
     
+    
     return answer;
 }
