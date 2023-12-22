@@ -10,7 +10,6 @@ function solution(price, money, count) {
     
     answer = total - money;
     if (answer < 0) answer = 0;
-
     
     return answer;
 }
