@@ -1,40 +1,29 @@
 function solution(s) {
-    var answer = 0;
-    var i = 0;
-    var x = s[0];
-    var cnt1 = 1;
-    var cnt2 = 0;
-    while (true){
-        i += 1;
-        if (i == s.length) {
-            if (x != "") {
-                answer += 1;
-            }
-            break;
-        }
-        
-        
-        if (x == ""){
-            x = s[i];
-            cnt1 = 1;
+    const stack = [];
+    const arr = s.split('');
+    let firstLetter;
+    let cntA = 0;
+    let cntB = 0;
+    let answer = 0;
+    for (let i = 0; i < arr.length; i += 1) {
+        if (cntA === 0) {
+            firstLetter = arr[i];
+            cntA += 1;
             continue;
         }
-        
-        if (s[i] == x[0]){
-            cnt1 += 1;
-            x += s[i];
-        } else {
-            cnt2 += 1;
-            x += s[i];
+        if (arr[i] !== firstLetter) {
+            cntB += 1;
         }
-        
-        if (cnt1 == cnt2){
+        else {
+            cntA += 1;
+        }
+        if (cntA === cntB) {
+            firstLetter = "";
+            cntA = 0;
+            cntB = 0;
             answer += 1;
-            x = ""
-            cnt1 = 0;
-            cnt2 = 0;
         }
-    
     }
-    return answer;
+    if (cntA !== 0) answer += 1;
+    return answer; 
 }
