@@ -6,12 +6,21 @@ class Solution {
         List<Integer> list = new ArrayList<>();
         
         for (int i = 0; i < arr.length; i++) {
-            minNum = Math.min(minNum, arr[i]);
+            minNum = Math.min(arr[i], minNum);
         }
         
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] != minNum) list.add(arr[i]);
         }
-        return list.size() == 0 ? new int[] {-1} : list.stream().mapToInt(i -> i).toArray();
+        
+        if (list.isEmpty()) {
+            return new int[]{-1};
+        } else {
+            int[] result = new int[list.size()];
+            for (int i = 0; i < list.size(); i++) {
+                result[i] = list.get(i);
+            }
+            return result;
+        }
     }
 }
