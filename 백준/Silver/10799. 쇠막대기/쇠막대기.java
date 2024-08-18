@@ -9,28 +9,24 @@ public class Main {
 
 		String str = br.readLine();
 
-		Stack<Character> stack = new Stack<>();
-
+		ArrayDeque<Character> queue = new ArrayDeque<>();
+		
 		int result = 0;
-
+		
 		for (int i = 0; i < str.length(); i++) {
 			char c = str.charAt(i);
-			if (c == '(') {
-				stack.push('(');
-				continue;
-			}
+			if (c == '(') queue.offerLast('(');
+			
 			if (c == ')') {
-				stack.pop();
-
-				if (str.charAt(i - 1) == '(') {
-					result += stack.size();
+				queue.pollLast();
+				if (str.charAt(i-1) == '(') {
+					result += queue.size();
 				} else {
-					result++;
+					result ++;
 				}
-
 			}
 		}
-
+		
 		System.out.println(result);
 
 	}
