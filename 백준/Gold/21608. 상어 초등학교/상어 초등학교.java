@@ -67,10 +67,12 @@ public class Main {
                 }
             }
 
+            /*
             candidates.sort((a, b) -> {
                 if (a[0] != b[0]) return a[0] - b[0];
                 return a[1] - b[1];
             });
+            */
 
             int[] selected = candidates.get(0);
             board[selected[0]][selected[1]] = num;
