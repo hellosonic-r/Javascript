@@ -1,5 +1,9 @@
 function solution(n) {
-    return Number([...String(n)].map(Number).sort((a,b) => b-a).join(""));
+    return parseInt(n.toString().split("").map(Number).sort((a,b) => {
+        if (a > b) return -1;
+        else if (a < b) return 1;
+        return 0;
+    }).join(""));
     
     
 }
