@@ -1,6 +1,3 @@
 function solution(n) {
-    const a = Math.sqrt(n);
-    let answer = 0;
-    parseInt(a) == a ? answer = Math.pow(a+1,2) : answer = -1;
-    return answer;
+    return Math.sqrt(n) % Math.floor(Math.sqrt(n)) === 0 ? (Math.sqrt(n) + 1) * (Math.sqrt(n) + 1) : -1
 }
