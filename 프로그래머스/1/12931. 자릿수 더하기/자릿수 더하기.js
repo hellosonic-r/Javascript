@@ -1,3 +1,8 @@
-function solution(n) {
-   return [...String(n)].map(Number).reduce((s, currValue) => {return s + currValue}, 0);
+function solution(n){
+    let answer = 0;
+    [...(n + "").split("")].forEach(num => {
+        answer += Number(num);
+    })
+    
+    return answer;
 }
