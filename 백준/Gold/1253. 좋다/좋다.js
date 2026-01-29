@@ -15,14 +15,15 @@ let answer = 0;
 //ans : 3
 const visited = Array.from({ length: n }, () => false);
 for (let i = 0; i < n; i++) {
-  answer += twoSum(arr, arr[i], i);
+  if (twoSum(arr, arr[i], i)) {
+    answer += 1;
+  }
 }
 console.log(answer);
 
 function twoSum(arr, target, targetIndex) {
   let left = 0;
   let right = n - 1;
-  let cnt = 0;
   while (left < right) {
     if (left === targetIndex) {
       left++;
@@ -36,9 +37,8 @@ function twoSum(arr, target, targetIndex) {
       if (!visited[targetIndex]) {
         visited[targetIndex] = true;
         // console.log(arr[left], ":", left, arr[right], ":", right);
-        cnt += 1;
+        return true;
       }
-      right--;
     } else if (arr[left] + arr[right] < target) {
       left++;
     } else {
@@ -46,5 +46,5 @@ function twoSum(arr, target, targetIndex) {
     }
   }
 
-  return cnt;
+  return false;
 }
