@@ -13,11 +13,11 @@ let first = 0;
 let second = 0;
 let third = 0;
 
-for (let i = 0; i < n; i++) {
+for (let i = 0; i < n - 2; i++) {
   twoSum(arr, arr[i], i);
 }
 function twoSum(arr, target, targetIndex) {
-  let left = 0;
+  let left = targetIndex + 1;
   let right = arr.length - 1;
   while (left < right) {
     if (left === targetIndex) {
@@ -34,12 +34,12 @@ function twoSum(arr, target, targetIndex) {
       first = arr[left];
       second = target;
       third = arr[right];
-    } 
+    }
 
     if (sum < 0) {
-      left++
+      left++;
     } else {
-      right--
+      right--;
     }
   }
 }
