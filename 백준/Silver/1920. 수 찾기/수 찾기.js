@@ -2,17 +2,20 @@ let fs = require('fs');
 let input = fs.readFileSync('/dev/stdin').toString().split('\n');
 
 const n = Number(input[0]);
-const a = input[1]
+const arr = input[1]
   .split(' ')
   .map(Number)
   .sort((a, b) => a - b);
+
 const m = Number(input[2]);
-const arr = input[3].split(' ').map(Number);
+const numbers = input[3].split(' ').map(Number);
 const result = [];
 
-arr.forEach((num) => {
-  result.push(binarySearch(a, num));
+numbers.forEach((num) => {
+  result.push(binarySearch(arr, num));
 });
+
+console.log(result.join('\n'));
 
 function binarySearch(arr, target) {
   let left = 0;
@@ -25,7 +28,6 @@ function binarySearch(arr, target) {
     if (arr[mid] < target) left = mid + 1;
     else right = mid - 1;
   }
+
   return 0;
 }
-
-console.log(result.join('\n'));
